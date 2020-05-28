@@ -1,0 +1,29 @@
+The Razor Pages Project
+from Tim Corey's Which ASP.NET Core course
+
+-- Add the DLL from the Common / DB project --
+
+1. Copy the DataLibrary.dll from Windows Explorer
+and Rt-click project -- Paste.
+2. Rt-click DataLibrary.dll -- Properties --
+set "Copy to Output Directory" to "Copy Always".
+3. Rt-click Dependencies -- Add Reference -- browse for it.
+4. It will show up in Dependencies-Assemblies.
+5. Confirm it's available by going to Startup.cs and
+typing something like "DataLibrary.Models.FoodModel" to see
+if VS recognizes it.
+
+6. I anticipate you'll have to make some changes
+when you switch between work and home.
+
+-- Configure the DI --
+
+Startup.cs -- check your notes.
+ConfigureServices: where we inject the classes from the Common project
+as Singletons. (Depending on the kind of app you're writing, you
+won't always use Singleton; sometimes other things.)
+
+-- Add the ConnectionString --
+
+WAIT. WHY is this not updating on GitHub? Ugh.
+
