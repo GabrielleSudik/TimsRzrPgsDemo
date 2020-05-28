@@ -26,4 +26,53 @@ won't always use Singleton; sometimes other things.)
 -- Add the ConnectionString --
 
 WAIT. WHY is this not updating on GitHub? Ugh.
+You are manually copy and pasting your work into home compy.
+Maybe because you didn't add a .gitignore so weird stuff is saving?
+Anyway...
+
+appsettings.json
+It doesn't have connection string info by default.
+Check it out, starting with "ConnectionStrings"
+Note we identify the "Default" and elsewhere in the code
+we say the connection string will be to "Default". It's 
+just following the path...
+
+connectionstrings.com -- has a whole bunch of options to use to
+connect to all sorts of DB, including stuff like Excel and AD.
+We're using SQL Server. Then scroll down and check for the boilerplate
+strings like Trusted Connection, LocalDB Automatic Instance, etc.
+Copy, paste, modify.
+
+Another way to find your connection string. Maybe even better:
+Open SQL Server Object Explorer, find your DB (TimsDinerDB),
+Rt-click for Properties, find the Connection string property,
+copy the value, paste it into the value for CS in appsettings.json.
+
+Here it is:
+Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=TimsDinerDB;
+Integrated Security=True;Connect Timeout=30;Encrypt=False;
+TrustServerCertificate=False;ApplicationIntent=ReadWrite;
+MultiSubnetFailover=False
+
+What those mean:
+Data Source = location of DB
+Initial Catalog = name of DB
+Integrated Security true = uses Windows login
+(those three are the only requireds)
+(the others are helpful and just come boilerplate)
+
+This is not the same connection string you'd use in other envs.
+In real life, you'd have pipelines and stuff to change the CS
+to match the env.
+One reason we use a json file to set this is because text files
+are very easy to change by the pipeline.
+And you can keep the json file separate from the code,
+so even devs can't tinker with it, keeping it more secure.
+
+-- Routing --
+
+Startup.cs
+
+app.UseRouting(); sets things up.
+app.UseEndpoints(//stuff); is the details.
 
