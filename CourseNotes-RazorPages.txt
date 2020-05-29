@@ -1,10 +1,26 @@
 The Razor Pages Project
 from Tim Corey's Which ASP.NET Core course
 
+-- Exporting the DLL (do this in the Common solution) --
+
+The TimsAspNetCoreCommon solution is complete.
+We've to export it so the 5 web projects can use it.
+
+Steps:
+1. Change dropdown at top from Debug to Release.
+2. Build or Rebuild solution.
+3. Rt click DataLibrary project -- Open Folder in F Expl --
+bin folder -- Release -- NetCoreApp3.1 -- there's a .DLL file.
+4. DataLibrary.dll will become a dependency in our other projects.
+*. One step we are NOT doing is going to project's Properties - Package -
+"Generate Nuget package on build" route. But we could. Instead:
+5. When we start each new project, we'll reference that .dll file.
+I guess further instructions will come soon.
+
 -- Add the DLL from the Common / DB project --
 
 1. Copy the DataLibrary.dll from Windows Explorer
-and Rt-click project -- Paste.
+and Rt-click project -- Paste. (Make sure you're getting it from the Common project!)
 2. Rt-click DataLibrary.dll -- Properties --
 set "Copy to Output Directory" to "Copy Always".
 3. Rt-click Dependencies -- Add Reference -- browse for it.
@@ -71,8 +87,17 @@ so even devs can't tinker with it, keeping it more secure.
 
 -- Routing --
 
-Startup.cs
+Startup.cs -- check your notes there.
 
 app.UseRouting(); sets things up.
 app.UseEndpoints(//stuff); is the details.
+
+-- Creating Data --
+
+New folder: Pages -> Orders -> new Razor Page "Create".
+It scaffolds .cshtml and .cshtml.cs.
+The .cs looks like a Web Forms code-behind, but it's not.
+It's MVVM.
+
+Head to Create.cshtml.cs for code and notes.
 

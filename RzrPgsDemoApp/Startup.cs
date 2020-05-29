@@ -60,13 +60,19 @@ namespace RzrPgsDemoApp
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-            app.UseRouting();
+            app.UseRouting(); //sets us up to use routing
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
+            app.UseEndpoints(endpoints => //details of routing here
             {
-                endpoints.MapRazorPages();
+                endpoints.MapRazorPages(); //check for the "Pages" folder in the solution.
+                                           //this method treats Pages as the root, and referenes to other pages
+                                           //in that file. Ex: "/Error" refers to Pages/Error.cshtml
+                                           //see above at line "app.UseExceptionHandler("/Error");"
+                                           //that means, when that method is called, route to Error page.
+
+                //other types of projects will have different endpoints.MapStuff methods.
             });
         }
     }
