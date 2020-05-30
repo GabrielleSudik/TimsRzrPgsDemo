@@ -289,6 +289,18 @@
           }
         }
       },
+      "Microsoft.Extensions.Configuration.Abstractions/3.1.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "3.1.4"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.Abstractions.dll": {}
+        }
+      },
       "Microsoft.Extensions.DependencyInjection/3.1.0": {
         "type": "package",
         "dependencies": {
@@ -308,6 +320,15 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Primitives/3.1.4": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Primitives.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Primitives.dll": {}
         }
       },
       "Microsoft.NETCore.Platforms/2.1.2": {
@@ -2050,6 +2071,22 @@
         "microsoft.codeanalysis.workspaces.common.nuspec"
       ]
     },
+    "Microsoft.Extensions.Configuration.Abstractions/3.1.4": {
+      "sha512": "k7IJME4US5S5JFOGYaei5TLwutp8IqUvcBWtliKXETGn/JScmCgfej21xq5+ttxi0qZhiyJY06y9dw+cLh3kiQ==",
+      "type": "package",
+      "path": "microsoft.extensions.configuration.abstractions/3.1.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.Abstractions.dll",
+        "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.Abstractions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.xml",
+        "microsoft.extensions.configuration.abstractions.3.1.4.nupkg.sha512",
+        "microsoft.extensions.configuration.abstractions.nuspec"
+      ]
+    },
     "Microsoft.Extensions.DependencyInjection/3.1.0": {
       "sha512": "KVkv3aF2MQpmGFRh4xRx2CNbc2sjDFk+lH4ySrjWSOS+XoY1Xc+sJphw3N0iYOpoeCCq8976ceVYDH8sdx2qIQ==",
       "type": "package",
@@ -2082,6 +2119,22 @@
         "microsoft.extensions.dependencyinjection.abstractions.3.1.0.nupkg.sha512",
         "microsoft.extensions.dependencyinjection.abstractions.nuspec",
         "packageIcon.png"
+      ]
+    },
+    "Microsoft.Extensions.Primitives/3.1.4": {
+      "sha512": "tLR9n5ltwA56nr1t5M6q5IBfGLXtMS+XgumtqVENmtPQOWUD+m0Kgo1U6GWr06Y875WUN3sOGnmqkvW4an7fYA==",
+      "type": "package",
+      "path": "microsoft.extensions.primitives/3.1.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/netcoreapp3.1/Microsoft.Extensions.Primitives.dll",
+        "lib/netcoreapp3.1/Microsoft.Extensions.Primitives.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Primitives.xml",
+        "microsoft.extensions.primitives.3.1.4.nupkg.sha512",
+        "microsoft.extensions.primitives.nuspec"
       ]
     },
     "Microsoft.NETCore.Platforms/2.1.2": {
@@ -5998,6 +6051,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Microsoft.Extensions.Configuration.Abstractions >= 3.1.4",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.3"
     ]
   },
@@ -6042,6 +6096,10 @@
     "frameworks": {
       "netcoreapp3.1": {
         "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": {
+            "target": "Package",
+            "version": "[3.1.4, )"
+          },
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[3.1.3, )"

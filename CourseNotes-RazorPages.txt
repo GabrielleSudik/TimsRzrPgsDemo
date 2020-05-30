@@ -101,3 +101,5 @@ It's MVVM.
 
 Head to Create.cshtml.cs for code and notes.
 
+[Note to self: you are halfway through lesson 36,
+and you are getting the same error as Tim so good news.]
