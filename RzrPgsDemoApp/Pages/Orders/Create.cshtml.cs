@@ -45,5 +45,27 @@ namespace RzrPgsDemoApp
                 FoodItems.Add(new SelectListItem { Value = x.Id.ToString(), Text = x.Title });
             });
         }
+
+        //new project start with OnGet()
+        //here's our first custom method to Post.
+        public async Task<IActionResult> OnPost()
+        {
+            if (ModelState.IsValid == false) //ie, if something is wrong with the model
+            {
+                return Page(); //just return the same page.
+            }
+
+            var food = await _foodData.GetFood();
+
+            Order.Total = Order.Quantity * food.Where(x => x.Id == Order.FoodId).First().Price;
+
+            int id = await _orderData.CreateOrder(Order);
+            //fyi when you ran this program the first time, you watched the id
+            //increase from 0 to 1 to 2 with each new order, just like your
+            //Common project code is supposed to. gj.
+
+            return RedirectToPage("./Create"); //you can redirect anywhere you want.
+            //note RediretToPage is for Razor Pages. RedirectToAction is for MVC.
+        }
     }
 }

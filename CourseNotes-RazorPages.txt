@@ -21,6 +21,8 @@ I guess further instructions will come soon.
 
 1. Copy the DataLibrary.dll from Windows Explorer
 and Rt-click project -- Paste. (Make sure you're getting it from the Common project!)
+1.5. Do the same for DataLibrary.deps.json
+(Tim backtracked on adding that one, but it was interesting to see)
 2. Rt-click DataLibrary.dll -- Properties --
 set "Copy to Output Directory" to "Copy Always".
 3. Rt-click Dependencies -- Add Reference -- browse for it.
@@ -101,5 +103,35 @@ It's MVVM.
 
 Head to Create.cshtml.cs for code and notes.
 
-[Note to self: you are halfway through lesson 36,
-and you are getting the same error as Tim so good news.]
+Oh no! Tim and I get errors midway through, trying to start the project.
+The fix:
+We need to add more references, apparently to make Nuget packages work.
+Rt click project name, Edit Project File (.csproj). Look for refs:
+
+<ItemGroup>
+    <Reference Include="DataLibrary">
+      <HintPath>..\..\TimsAspNetCoreCommon\DataLibrary\bin\Release\netcoreapp3.1\DataLibrary.dll</HintPath>
+      //etc
+
+The problem is that not all refs from DataLibrary moved over to this project.
+So...
+
+In DataLibary .csprog, you'll see:
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.35" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="1.1.3" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.4" />
+  </ItemGroup>
+
+Copy those three things, put them in THIS csproj file
+in the ItemGroup / Reference area.
+Rebuild solution, check the new refs are added to dependencies. (They are.)
+
+At this point, we can check out a bare bones page.
+Run it -> https://localhost:5001/Orders/Create
+
+More notes in Create..cshtml and .cshtml.cs.
+
+-- Reading Data --
+
+

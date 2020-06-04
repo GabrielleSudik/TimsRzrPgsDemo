@@ -28,7 +28,7 @@
     </div>
 
     <div class="form-group">
-        <input type="submit" value="Order your food" class="btn btn-primary" /> 
+        <input type="submit" value="Order your food" class="btn btn-primary" />
     </div>
 </form>
 
@@ -39,6 +39,13 @@
 <!--ASP is smart enough to know what kind of field is needed for different properties.
     Eg, OrderName will get a text field and Quantity an int.-->
 
-
 <!--Tim's relying on these classes from Bootstrap.
     He's not getting into it here, it's just for nice styling.-->
+
+<!--Add some client-side validation.-->
+<!--You added this bit of code, but ValidationScriptsPartial is already
+    in the project, in Shared. It's just boilerplate to help validate stuff.
+    Recall we set some validation in the OrderModel.cs in the Common project.-->
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
