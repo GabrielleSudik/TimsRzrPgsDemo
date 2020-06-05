@@ -64,8 +64,17 @@ namespace RzrPgsDemoApp
             //increase from 0 to 1 to 2 with each new order, just like your
             //Common project code is supposed to. gj.
 
-            return RedirectToPage("./Create"); //you can redirect anywhere you want.
+            //return RedirectToPage("./Create"); //you can redirect anywhere you want.
             //note RediretToPage is for Razor Pages. RedirectToAction is for MVC.
+            //later, changed to:
+            return RedirectToPage("./Display", new { Id = id });
+
+            //That Id = id is an anonymous object. Those are types without names
+            //and that aren't created until just when you need them.
+            //Meant to be temporary.
+            //In this case, we create it only to pass along the property ID
+            //to the /Display page, which needs an id to work.
+            //So whatever we created as id here will become Id there.
         }
     }
 }

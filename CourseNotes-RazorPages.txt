@@ -134,4 +134,11 @@ More notes in Create..cshtml and .cshtml.cs.
 
 -- Reading Data --
 
+New Razor Page under Orders -> Display.
+/Orders/Display -- the .cshtml and the .cs.
+All your notes are there.
 
+Part two of lesson:
+New Pages folder Food, new Razor Page List.
+/Food/List
+Check some notes there.

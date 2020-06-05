@@ -1,0 +1,28 @@
+﻿@page
+@model RzrPgsDemoApp.ListModel
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>List</h1>
+
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var food in Model.Food)
+        {
+        <tr>
+            <td>@food.Title</td>
+            <th>@food.Description</th>
+            <th>@string.Format("{0:C}", food.Price)</th>
+        </tr>
+        }
+    </tbody>
+</table>
+

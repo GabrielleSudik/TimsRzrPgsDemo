@@ -1,0 +1,52 @@
+﻿@page
+@model RzrPgsDemoApp.DisplayModel
+@{
+    ViewData["Title"] = "Display";
+}
+
+<h1>Display</h1>
+
+<!--How will the following code know if Model.Order is null?
+    Check the .cs for the OnGet method and logic.
+    -->
+@if(Model.Order is null)
+{
+    <h4>The requested item wasn't found.</h4>
+}
+else
+{
+    <table class="table">
+        <tbody>
+            <tr>
+                <td><strong>Order Name</strong></td>
+                <td>@Model.Order.OrderName</td>
+            </tr>
+            <tr>
+                <td><strong>Order Date</strong></td>
+                <td>@Model.Order.OrderDate</td>
+            </tr>
+            <tr>
+                <td><strong>Order Total</strong></td>
+                <td>@string.Format("{0:C}", Model.Order.Total)</td>
+                <!--Format it to currency of the machine.-->
+            </tr>
+            <tr>
+                <td><strong>Item Ordered</strong></td>
+                <td>@Model.ItemPurchased</td>
+                <!--THIS ONE ONLY - the model is DisplayModel
+                    (see the top of this page). We created this one
+                    property in this model. All the rest are from
+                    the model called Order.-->
+            </tr>
+            <tr>
+                <td><strong>Quanity</strong></td>
+                <td>@Model.Order.Quantity</td>
+            </tr>
+        </tbody>
+    </table>
+}
+
+<!--Per Tim: See the "is null" there? It's just like ==.
+    Sometimes you CAN make these mean two diff things
+    but you have to create overloads, and Tim says don't do that.-->
+
