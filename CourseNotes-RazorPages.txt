@@ -142,3 +142,28 @@ Part two of lesson:
 New Pages folder Food, new Razor Page List.
 /Food/List
 Check some notes there.
+
+-- Updating Data --
+
+We'll modify Display page.
+Makes sense, right? See the data, then change what you need.
+
+Create a new model. New folder: Model ->
+New class -> OrderUpdateModel
+
+Tim encourages us to make as many models as you need
+even if there is a lot of near-duplication.
+Like in our case, Order and OrderUpdate are similar
+but each serves it own purpose.
+Don't try to make an oval fit a circle.
+
+You got the changes working.
+How is Razor Page different from a Blazor Page?
+Razor Pages do everything server-side, then deliver it
+to the client. Ie, the whole Display page is refreshed
+when you update an order. It _looks like_ only one
+thing changes, because it's small and fast. But it's
+all server-side.
+
+-- Deleting Data --
+

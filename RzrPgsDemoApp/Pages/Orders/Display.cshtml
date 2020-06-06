@@ -9,7 +9,7 @@
 <!--How will the following code know if Model.Order is null?
     Check the .cs for the OnGet method and logic.
     -->
-@if(Model.Order is null)
+@if (Model.Order is null)
 {
     <h4>The requested item wasn't found.</h4>
 }
@@ -44,9 +44,28 @@ else
             </tr>
         </tbody>
     </table>
+
+    <!--this next bit is to allow updating of data that is displayed.-->
+
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input asp-for="OrderUpdate.Id" value="@Model.Order.Id" type="hidden" />
+        <!--that last line: When you do a get, subsequent posts don't rememeber
+            anything about that get. So you have to tell the post the info it needs.
+            Here, we are telling it that this line of code is about OrderUpdate.Id
+            and it gets the value from Model.Order.Id. We keep it hidden because
+            we need to pass that data along, but the user shouldn't see it.-->
+        <div class="form-group">
+            <label asp-for="OrderUpdate.Name" class="control-label"></label>
+            <input asp-for="OrderUpdate.Name" value="@Model.Order.OrderName" class="form-control" />
+            <span asp-validation-for="OrderUpdate.Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Update order name here" class="btn btn-primary" />
+        </div>
+    </form>
 }
 
-<!--Per Tim: See the "is null" there? It's just like ==.
+<!--Per Tim: See the "is null" in the if statement? It's just like ==.
     Sometimes you CAN make these mean two diff things
     but you have to create overloads, and Tim says don't do that.-->
-
