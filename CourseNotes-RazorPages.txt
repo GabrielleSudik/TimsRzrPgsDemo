@@ -167,3 +167,15 @@ all server-side.
 
 -- Deleting Data --
 
+Create new Razor Page under Orders/Delete.
+Check the .cshtml and .cs for notes and code.
+
+https://localhost:5001/Orders/Delete?Id=2002 or similar
+is the path you'll need to type (until you create links
+in the pages themselves).
+
+Finally, check out _Layout. 
+We'll add some navigations to the nav bar. Easy.
+
+--Deploying the App --
+

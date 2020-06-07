@@ -133,3 +133,4 @@ C:\Users\Gabrielle\Source\Repos\TimsRzrPgsDemo\RzrPgsDemoApp\bin\Debug\netcoreap
 C:\Users\Gabrielle\Source\Repos\TimsRzrPgsDemo\RzrPgsDemoApp\obj\Debug\netcoreapp3.1\RzrPgsDemoApp.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Gabrielle\Source\Repos\TimsRzrPgsDemo\RzrPgsDemoApp\obj\Debug\netcoreapp3.1\Razor\Pages\Orders\Display.cshtml.g.cs
 C:\Users\Gabrielle\Source\Repos\TimsRzrPgsDemo\RzrPgsDemoApp\obj\Debug\netcoreapp3.1\Razor\Pages\Food\List.cshtml.g.cs
+C:\Users\Gabrielle\Source\Repos\TimsRzrPgsDemo\RzrPgsDemoApp\obj\Debug\netcoreapp3.1\Razor\Pages\Orders\Delete.cshtml.g.cs

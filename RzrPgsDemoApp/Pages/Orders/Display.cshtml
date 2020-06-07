@@ -34,13 +34,24 @@ else
                 <td><strong>Item Ordered</strong></td>
                 <td>@Model.ItemPurchased</td>
                 <!--THIS ONE ONLY - the model is DisplayModel
-                    (see the top of this page). We created this one
-                    property in this model. All the rest are from
-                    the model called Order.-->
+            (see the top of this page). We created this one
+            property in this model. All the rest are from
+            the model called Order.-->
             </tr>
             <tr>
                 <td><strong>Quanity</strong></td>
                 <td>@Model.Order.Quantity</td>
+            </tr>
+
+            <!--added later to make deleting things tidier:-->
+            <tr>
+                <td colspan="2">
+                    <a asp-page="./Delete" asp-route-id="@Model.Order.Id" class="btn btn-danger">Delete this order</a>
+                </td>
+                <!--Note about asp-route-id: That tag doesn't show up in intellisense.
+                    I THINK it's because it's really named after the field you're referencing.
+                    Ie, if the field were Model.Order.Name it would be asp-route-name.
+                    I AM NOT SURE ABOUT THIS.-->
             </tr>
         </tbody>
     </table>
