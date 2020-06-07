@@ -179,3 +179,35 @@ We'll add some navigations to the nav bar. Easy.
 
 --Deploying the App --
 
+This is a walkthrough for a quickie publish.
+It's not for production stuff, more like deploying while developing.
+
+Right Click project name -> Publish -> choose Folder option ->
+Create Profile -> seleted the Edit pencil -> Deployment Mode:
+select Self-contained (this brings .net core 3.1 along with the app;
+the other option trusts that the target compy already has it.)
+Check the box to delete previous versions. (Sometimes you'll change
+other things too, but that's it for this lesson.) 
+
+Hit SAVE. Hit PUBLISH. You'll see:
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
+========== Publish: 1 succeeded, 0 failed, 0 skipped ==========
+
+Open project in File Explorer -> bin - Release - 3.1 - publish.
+Lots of files there. 
+Open appsettings.json in a code editor.
+Edit the connection string to be the real location,
+not your local desktop. (Note you didn't actually do this,
+Tim just says to do it.)
+
+Next, copy the link of the publish folder in File Explorer.
+Head to the web and find your web hosting.
+Tim uses interServer for his asp.net web hosting. It's cheap.
+Up to 25 sites, free SSL certs, DB uploads.
+Use Tim's link so he gets a referral kickback.
+SEE BONUS SECTION OF THIS COURSE TO SET UP A SITE!!
+
+There's more to this lesson, but you're zoning
+because there's more to it than just what Tim is showing.
+
+--- End of Razor Pages Demo ---
